@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Pogodi broj</title>
+
+<style>
+body{
+    background:#cc1717;
+    color:white;
+    font-family:Arial;
+    text-align:center;
+    margin-top:100px;
+}
+
+<input{
+    padding:10px;
+    font-size:20px;
+    width:100px;
+}
+
+button{
+    padding:10px 20px;
+    font-size:20px;
+    cursor:pointer;
+}
+
+#tekst{
+    margin-top:20px;
+    font-size:25px;
+}
+</style>
+</head>
+
+<body>
+
+<h1>🎯 Pogodi broj (1-100)</h1>
+
+<input type="number" id="broj">
+<button onclick="pogodi()">Pogodi/button>
+
+<p id="tekst"></p>
+
+<script>
+
+let tajniBroj =
+Math.floor(Math.random()*100)+1;
+let pokusaji = 0;
+
+function pogodi(){
+
+let unos =
+Number(document.getElementById("broj").value);
+
+pokusaji++;
+
+if(unos == tajniBroj){
+document.getElementById("tekst").innerHTML =
+"🎉 Bravo! Pogodio/la si broj nakon " +
+pokusaji + " pokušaja!";
+}
+
+else if(unos < tajniBroj){
+document.getElementById("tekst").innerHTML = 
+"📈 Moj broj je VEĆI!";
+}
+
+else{
+document.getElementById("tekst").innerHTML = 
+"📉 Moj broj je MANJI!";
+}
+
+}
+
+</script>
+
+</body>
+</html>
